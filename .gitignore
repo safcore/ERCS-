@@ -1,0 +1,38 @@
+# Virtual Environment
+backend/venv/
+venv/
+.venv/
+env/
+.env/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+backend/__pycache__/
+backend/routes/__pycache__/
+tests/__pycache__/
+
+# Node Modules & Frontend Builds
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+.oxlintrc.json
+
+# SQLite Database (Preserve clean repo; auto-seeded on cold start)
+backend/ercs.db
+*.db
+*.sqlite3
+
+# Test & Environment Caches
+.pytest_cache/
+.env
+.env.local
+.env.*.local
+
+# Editor & System Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
