@@ -121,25 +121,9 @@ pipeline {
             steps {
                 echo "===> Running SonarQube Code Quality and Static Security Analysis..."
                 script {
-                    // Check if SonarQube environment is configured in Jenkins
-                    def hasSonarEnv = false
-                    try {
-                        withSonarQubeEnv('SonarQube') {
-                            hasSonarEnv = true
-                            sh '''
-                                if command -v sonar-scanner >/dev/null 2>&1; then
-                                    sonar-scanner -Dsonar.projectKey=${SONAR_PROJECT}
-                                else
-                                    echo "[WARNING] sonar-scanner CLI not found in PATH. Skipping scanner execution."
-                                fi
-                            '''
-                        }
-                    } catch (Exception e) {
-                        echo "[INFO] SonarQube server environment not bound or offline: ${e.message}"
-                        echo "[INFO] Executing fallback static linting check..."
-                        sh '''
-                            python3 -m flake8 backend || echo "flake8 check finished"
-                        '''
+                    def scannerHome = tool 'SonarScanner'
+                    withSonarQubeEnv('SonarQube') {
+                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=${SONAR_PROJECT}"
                     }
                 }
             }
