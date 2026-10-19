@@ -1,0 +1,287 @@
+﻿{
+    "qualityGate":  {
+                        "status":  "OK",
+                        "conditions":  [
+                                           {
+                                               "status":  "OK",
+                                               "metricKey":  "new_reliability_rating",
+                                               "comparator":  "GT",
+                                               "periodIndex":  1,
+                                               "errorThreshold":  "1",
+                                               "actualValue":  "1"
+                                           },
+                                           {
+                                               "status":  "OK",
+                                               "metricKey":  "new_security_rating",
+                                               "comparator":  "GT",
+                                               "periodIndex":  1,
+                                               "errorThreshold":  "1",
+                                               "actualValue":  "1"
+                                           },
+                                           {
+                                               "status":  "OK",
+                                               "metricKey":  "new_maintainability_rating",
+                                               "comparator":  "GT",
+                                               "periodIndex":  1,
+                                               "errorThreshold":  "1",
+                                               "actualValue":  "1"
+                                           },
+                                           {
+                                               "status":  "OK",
+                                               "metricKey":  "new_coverage",
+                                               "comparator":  "LT",
+                                               "periodIndex":  1,
+                                               "errorThreshold":  "80",
+                                               "actualValue":  "0.0"
+                                           },
+                                           {
+                                               "status":  "OK",
+                                               "metricKey":  "new_duplicated_lines_density",
+                                               "comparator":  "GT",
+                                               "periodIndex":  1,
+                                               "errorThreshold":  "3",
+                                               "actualValue":  "0.0"
+                                           }
+                                       ],
+                        "periods":  [
+                                        {
+                                            "index":  1,
+                                            "mode":  "PREVIOUS_VERSION",
+                                            "date":  "2026-10-15T09:16:03+0000"
+                                        }
+                                    ],
+                        "ignoredConditions":  true,
+                        "period":  {
+                                       "mode":  "PREVIOUS_VERSION",
+                                       "date":  "2026-10-15T09:16:03+0000"
+                                   },
+                        "caycStatus":  "compliant"
+                    },
+    "projectKey":  "ERCS-DevSecOps",
+    "timestamp":  "2026-10-17T08:33:03Z",
+    "serverVersion":  "9.9.8.100196",
+    "hotspots":  [
+                     {
+                         "key":  "AaE-2p6HDJq4kI9hgkX3",
+                         "component":  "ERCS-DevSecOps:backend/app.py",
+                         "project":  "ERCS-DevSecOps",
+                         "securityCategory":  "csrf",
+                         "vulnerabilityProbability":  "HIGH",
+                         "status":  "TO_REVIEW",
+                         "line":  20,
+                         "message":  "Make sure disabling CSRF protection is safe here.",
+                         "author":  "",
+                         "creationDate":  "2026-10-15T09:16:03+0000",
+                         "updateDate":  "2026-10-15T09:16:03+0000",
+                         "textRange":  {
+                                           "startLine":  20,
+                                           "endLine":  20,
+                                           "startOffset":  10,
+                                           "endOffset":  25
+                                       },
+                         "flows":  [
+
+                                   ],
+                         "ruleKey":  "python:S4502",
+                         "messageFormattings":  [
+
+                                                ]
+                     },
+                     {
+                         "key":  "AaE-2p6XDJq4kI9hgkX7",
+                         "component":  "ERCS-DevSecOps:backend/Dockerfile",
+                         "project":  "ERCS-DevSecOps",
+                         "securityCategory":  "permission",
+                         "vulnerabilityProbability":  "MEDIUM",
+                         "status":  "TO_REVIEW",
+                         "line":  16,
+                         "message":  "Make sure that recursively copying directories is safe here.",
+                         "author":  "",
+                         "creationDate":  "2026-10-15T09:16:03+0000",
+                         "updateDate":  "2026-10-15T09:16:03+0000",
+                         "textRange":  {
+                                           "startLine":  16,
+                                           "endLine":  16,
+                                           "startOffset":  5,
+                                           "endOffset":  6
+                                       },
+                         "flows":  [
+
+                                   ],
+                         "ruleKey":  "docker:S6470",
+                         "messageFormattings":  [
+
+                                                ]
+                     },
+                     {
+                         "key":  "AaFI_GoNp1g4R8LP7QPB",
+                         "component":  "ERCS-DevSecOps:backend/Dockerfile",
+                         "project":  "ERCS-DevSecOps",
+                         "securityCategory":  "permission",
+                         "vulnerabilityProbability":  "MEDIUM",
+                         "status":  "TO_REVIEW",
+                         "line":  7,
+                         "message":  "The python image runs with root as the default user. Make sure it is safe here.",
+                         "author":  "",
+                         "creationDate":  "2026-10-15T09:16:03+0000",
+                         "updateDate":  "2026-10-17T08:29:37+0000",
+                         "textRange":  {
+                                           "startLine":  7,
+                                           "endLine":  7,
+                                           "startOffset":  0,
+                                           "endOffset":  21
+                                       },
+                         "flows":  [
+
+                                   ],
+                         "ruleKey":  "docker:S6471",
+                         "messageFormattings":  [
+
+                                                ]
+                     },
+                     {
+                         "key":  "AaE-2p5-DJq4kI9hgkX2",
+                         "component":  "ERCS-DevSecOps:frontend/src/App.jsx",
+                         "project":  "ERCS-DevSecOps",
+                         "securityCategory":  "weak-cryptography",
+                         "vulnerabilityProbability":  "MEDIUM",
+                         "status":  "TO_REVIEW",
+                         "line":  22,
+                         "message":  "Make sure that using this pseudorandom number generator is safe here.",
+                         "author":  "safinasamnani786@gmail.com",
+                         "creationDate":  "2026-10-04T15:41:04+0000",
+                         "updateDate":  "2026-10-15T09:16:03+0000",
+                         "textRange":  {
+                                           "startLine":  22,
+                                           "endLine":  22,
+                                           "startOffset":  28,
+                                           "endOffset":  41
+                                       },
+                         "flows":  [
+
+                                   ],
+                         "ruleKey":  "javascript:S2245",
+                         "messageFormattings":  [
+
+                                                ]
+                     },
+                     {
+                         "key":  "AaE-2p6HDJq4kI9hgkX4",
+                         "component":  "ERCS-DevSecOps:backend/app.py",
+                         "project":  "ERCS-DevSecOps",
+                         "securityCategory":  "insecure-conf",
+                         "vulnerabilityProbability":  "LOW",
+                         "status":  "TO_REVIEW",
+                         "line":  27,
+                         "message":  "Make sure this permissive CORS policy is safe here.",
+                         "author":  "",
+                         "creationDate":  "2026-10-15T09:16:03+0000",
+                         "updateDate":  "2026-10-15T09:16:03+0000",
+                         "textRange":  {
+                                           "startLine":  27,
+                                           "endLine":  32,
+                                           "startOffset":  4,
+                                           "endOffset":  5
+                                       },
+                         "flows":  [
+
+                                   ],
+                         "ruleKey":  "python:S5122",
+                         "messageFormattings":  [
+
+                                                ]
+                     }
+                 ],
+    "measures":  [
+                     {
+                         "metric":  "duplicated_lines_density",
+                         "value":  "0.0",
+                         "bestValue":  true
+                     },
+                     {
+                         "metric":  "vulnerabilities",
+                         "value":  "0",
+                         "bestValue":  true
+                     },
+                     {
+                         "metric":  "bugs",
+                         "value":  "0",
+                         "bestValue":  true
+                     },
+                     {
+                         "metric":  "coverage",
+                         "value":  "0.0",
+                         "bestValue":  false
+                     },
+                     {
+                         "metric":  "ncloc",
+                         "value":  "4756"
+                     },
+                     {
+                         "metric":  "reliability_rating",
+                         "value":  "1.0",
+                         "bestValue":  true
+                     },
+                     {
+                         "metric":  "alert_status",
+                         "value":  "OK"
+                     },
+                     {
+                         "metric":  "security_hotspots",
+                         "value":  "5",
+                         "bestValue":  false
+                     },
+                     {
+                         "metric":  "sqale_rating",
+                         "value":  "1.0",
+                         "bestValue":  true
+                     },
+                     {
+                         "metric":  "security_rating",
+                         "value":  "1.0",
+                         "bestValue":  true
+                     },
+                     {
+                         "metric":  "code_smells",
+                         "value":  "32",
+                         "bestValue":  false
+                     }
+                 ],
+    "issues":  [
+                   {
+                       "key":  "AaE-2p50DJq4kI9hgkXz",
+                       "rule":  "javascript:S3923",
+                       "severity":  "MAJOR",
+                       "component":  "ERCS-DevSecOps:frontend/src/components/StateProgressStepper.jsx",
+                       "project":  "ERCS-DevSecOps",
+                       "hash":  "665a00184adc40cb51cb788f0f3ed680",
+                       "textRange":  {
+                                         "startLine":  34,
+                                         "endLine":  38,
+                                         "startOffset":  18,
+                                         "endOffset":  15
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "resolution":  "FIXED",
+                       "status":  "CLOSED",
+                       "message":  "This conditional operation returns the same value whether the condition is \"true\" or \"false\".",
+                       "effort":  "15min",
+                       "debt":  "15min",
+                       "author":  "safinasamnani786@gmail.com",
+                       "tags":  [
+
+                                ],
+                       "creationDate":  "2026-10-04T15:41:04+0000",
+                       "updateDate":  "2026-10-15T09:22:06+0000",
+                       "closeDate":  "2026-10-15T09:22:06+0000",
+                       "type":  "BUG",
+                       "scope":  "MAIN",
+                       "quickFixAvailable":  false,
+                       "messageFormattings":  [
+
+                                              ]
+                   }
+               ]
+}

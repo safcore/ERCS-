@@ -1,0 +1,22 @@
+# ==============================================================================
+# Terraform Variables Example — ERCS Deployment
+# Instructions: Copy this file to 'terraform.tfvars' and supply your values.
+# NEVER commit your actual 'terraform.tfvars' file with private keys to GitHub.
+# ==============================================================================
+
+# AWS Region where resources will be created
+aws_region = "us-east-1"
+
+# Environment tag
+environment = "production"
+
+# EC2 Instance type (t2.micro is Free Tier eligible in supported regions)
+instance_type = "t2.micro"
+
+# Optional: Name of an existing EC2 Key Pair in your AWS account for SSH
+# key_name = "my-ercs-keypair"
+
+# Security: To enable direct SSH, provide your specific administrator public IP CIDR.
+# Example: allowed_ssh_cidrs = ["203.0.113.25/32"]
+# Leave empty [] (default) to disable port 22 and manage via AWS SSM Session Manager.
+allowed_ssh_cidrs = []

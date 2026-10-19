@@ -1,0 +1,28 @@
+# Virtual Environments
+venv/
+.venv/
+env/
+.env/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+routes/__pycache__/
+
+# Local SQLite Database (Mount via volume at runtime)
+ercs.db
+*.db
+*.sqlite3
+
+# Test & Linting Caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editor & System Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log

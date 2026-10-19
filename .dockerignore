@@ -1,0 +1,47 @@
+# Virtual Environments
+backend/venv/
+venv/
+.venv/
+env/
+.env/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+backend/__pycache__/
+backend/routes/__pycache__/
+tests/__pycache__/
+
+# Node Modules & Frontend Build Artifacts
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+.oxlintrc.json
+
+# Local SQLite Database (Mount via volume at runtime)
+backend/ercs.db
+*.db
+*.sqlite3
+
+# Test and Linting Caches
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Local Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# Git & Repository Metadata
+.git/
+.gitignore
+
+# IDE & OS Artifacts
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
