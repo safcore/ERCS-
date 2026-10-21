@@ -20,6 +20,8 @@ def create_app(db_path: str = None) -> Flask:
     app = Flask(__name__)
     if db_path:
         app.config["DATABASE"] = db_path
+    elif os.environ.get("DATABASE_PATH"):
+        app.config["DATABASE"] = os.environ.get("DATABASE_PATH")
 
     # Enable Cross-Origin Resource Sharing for Vite frontend
     CORS(
@@ -68,8 +70,9 @@ def create_app(db_path: str = None) -> Flask:
 if __name__ == "__main__":
     app = create_app()
     port = int(os.environ.get("PORT", 5000))
+    host = os.environ.get("HOST", "0.0.0.0")
     print(f"==================================================")
-    print(f"ERCS Backend running on http://127.0.0.1:{port}")
+    print(f"ERCS Backend running on http://{host}:{port}")
     print(f"Roll No: 124BTCS1031 | Course: SEP Micro Project")
     print(f"==================================================")
-    app.run(host="127.0.0.1", port=port, debug=True)
+    app.run(host=host, port=port, debug=False)
